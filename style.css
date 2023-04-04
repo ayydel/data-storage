@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* FONT STYLING */
+    --font-raleway: 'Raleway', sans-serif;
+    --font-sizing: 14px;
+    --font-regular: 400;
+    --font-bold: 700;
+
+    /* COLORS */
+    --color-gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --neutral-color-white: #fff;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-raleway);
+    background-color: var(--very-dark-blue);
+    background-image: url('images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p, .pale-blue span {
+    font-size: var(--font-sizing);
+    font-weight: var(--font-regular);
+    color: var(--neutral-color-white);
+}
+
+h1 {
+    font-weight: var(--font-bold);
+}
+
+.pale-blue {
+    color: var(--pale-blue);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;    
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    padding: 2.5rem;
+
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+}
+
+.utility-section {
+    display: grid;
+    gap: 2rem;
+
+    border-radius: 10px 90px 10px 10px;
+}
+
+.fylo-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fylo-buttons div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background-color: var(--very-dark-blue);
+}
+
+.download-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    position: relative;
+}
+
+.gb-limit {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loading-limit {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;    
+
+    border-radius: 20px;
+    background-color: var(--very-dark-blue);
+}
+
+.loading-progress {
+    height: 80%;
+    width: 75%;
+    padding: 0.15rem;
+
+    border-radius: 20px;
+    background-image: linear-gradient(to right, var(--color-gradient));
+}
+
+.circle {
+    height: 11px;
+    width: 11px;
+    float: right;
+
+    border-radius: 50%;
+    background-color: var(--neutral-color-white);
+}
+
+.dialog-box {
+    width: 160px;
+    position: absolute;
+    bottom: -45px;
+    left: 75px;
+    padding: 1em;
+
+    border-radius: 10px;
+    background-color: var(--neutral-color-white);
+}
+
+.dialog-box span {
+    font-size: var(--font-sizing);
+    color: var(--grayish-blue)
+}
+
+@media screen and (min-width: 1020px) {
+    body {
+        background-image: url('images/bg-desktop.png');
+        background-size: contain;
+        background-position: bottom;
+    }
+    .container {
+        min-width: 70vw;
+        max-height: 50%;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .box {
+        align-items: flex-start;    
+        position: relative;
+    }
+    .utility-section {
+        width: 50%;
+    }
+    .dialog-box {
+        bottom: 120px;
+        left: 420px;
+
+        border-radius: 10px 10px 0 10px;
+    }
+    .dialog-tail::before{
+        content:"";
+        width: 0;
+        height: 0;
+        position: absolute;
+
+        border-left: 10px solid transparent;
+        border-right: 10px solid var(--neutral-color-white);
+        border-top: 10px solid var(--neutral-color-white);
+        border-bottom: 10px solid transparent;
+        left: 140px;
+        bottom: -19px;
+    }
+}
